@@ -18,13 +18,13 @@ public class Counter : MonoBehaviour
     {
         if (_isCount)
         {
-            StopCoroutine(_countCoroutine);
             _isCount = false;
+            StopCoroutine(_countCoroutine);
         }
         else
         {
-            _countCoroutine = StartCoroutine(Count());
             _isCount = true;
+            _countCoroutine = StartCoroutine(Count());
         }
     }
 
@@ -35,9 +35,9 @@ public class Counter : MonoBehaviour
 
     private IEnumerator Count()
     {
-        while (true)
+        while (_isCount)
         {
-            yield return new WaitForSecondsRealtime(_delay);
+            yield return new WaitForSeconds(_delay);
 
             _currentCount++;
             CountView();
