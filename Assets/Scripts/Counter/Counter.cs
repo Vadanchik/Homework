@@ -13,7 +13,6 @@ public class Counter : MonoBehaviour
 
     private bool _isCount = false;
 
-
     public void ButtonClick()
     {
         if (_isCount)
